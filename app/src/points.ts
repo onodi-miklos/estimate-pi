@@ -5,5 +5,16 @@ interface Point {
   x: number;
   y: number;
 }
+interface Result{
+  in: number,
+  out: number
+}
 
-module.exports = {}
+let results: Result = {
+  in: 0,
+  out: 0
+}
+
+function generatePoints():void{}
+
+module.exports = {results, generatePoints}
