@@ -1,5 +1,6 @@
 // ESTIMATE PI
 
+const fs = require('fs')
 const {addArea} = require('./area.js')
 const {results, generatePoints} = require('./points.js')
 
