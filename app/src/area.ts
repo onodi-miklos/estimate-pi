@@ -11,11 +11,12 @@ let areaSecurity: boolean = false;
 let area: Point[] = [];
 
 function addArea(accuracy: number): void {
+  const newAccuracy: number = Math.pow(accuracy, -1);
   if (areaSecurity === false) {
     areaSecurity = true;
     for (let ang: number = 0; ang <= 100; ang += accuracy) {
-      const cosine: number = (Number(Math.cos(utils.gradiensToRadians(ang)).toFixed(Math.pow(accuracy, -1))));
-      const sine: number = (Number(Math.sin(utils.gradiensToRadians(ang)).toFixed(Math.pow(accuracy, -1))));
+      const cosine: number = (Number(Math.cos(utils.gradiensToRadians(ang)).toFixed(newAccuracy)));
+      const sine: number = (Number(Math.sin(utils.gradiensToRadians(ang)).toFixed(newAccuracy)));
 
       const coordinates: Point = {x: cosine, y: sine};
 

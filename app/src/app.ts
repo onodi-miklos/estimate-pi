@@ -19,6 +19,7 @@ interface Result {
 
 
 areaFile.addArea(accuracy)
+const quarterCircleArea: Point[] = areaFile.area;
 
 // function calculatePi(args: Result): number {
 
@@ -26,7 +27,8 @@ areaFile.addArea(accuracy)
 
 function saveResultsToFile(): void {
   const filePath = path.join(__dirname, '../result.txt');
-  fs.writeFileSync(filePath, JSON.stringify({quarterCircleLength: areaFile.area.length, quarterCircle:areaFile.area}))
+
+  fs.writeFileSync(filePath, JSON.stringify({quarterCircleLength: quarterCircleArea.length, quarterCircle:quarterCircleArea}))
 }
 saveResultsToFile()
 
