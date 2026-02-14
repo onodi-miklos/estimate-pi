@@ -1,6 +1,7 @@
 // ESTIMATE PI
 
 const fs = require("fs");
+const path = require('path')
 const pointsFile = require("./points.js");
 const areaFile = require("./area.js");
 
@@ -18,14 +19,15 @@ interface Result {
 
 
 areaFile.addArea(accuracy)
-console.log(areaFile.area.length)
 
 // function calculatePi(args: Result): number {
 
 // }
 
-// function saveResultsToFile(): void {
-
-// }
+function saveResultsToFile(): void {
+  const filePath = path.join(__dirname, '../result.txt');
+  fs.writeFileSync(filePath, JSON.stringify({quarterCircleLength: areaFile.area.length, quarterCircle:areaFile.area}))
+}
+saveResultsToFile()
 
 module.exports = { accuracy };

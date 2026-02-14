@@ -18,7 +18,6 @@ function addArea(accuracy: number): void {
       const sine: number = (Number(Math.sin(utils.gradiensToRadians(ang)).toFixed(Math.pow(accuracy, -1))));
 
       const coordinates: Point = {x: cosine, y: sine};
-      console.log(coordinates)
 
       area.push(coordinates)
     }
