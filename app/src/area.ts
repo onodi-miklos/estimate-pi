@@ -24,7 +24,7 @@ function addArea(): void {
       const sine: number = (Number(Math.sin(gradiensToRadians(ang)).toFixed(Math.pow(acc.accuracy, -1))));
 
       const coordinates: Point = {x: cosine, y: sine};
-      console.log(coordinates)
+      // console.log(coordinates)
 
       acc.area.push(coordinates)
     }
@@ -32,11 +32,8 @@ function addArea(): void {
     console.error("Area already added!");
   }
   // console.log(acc.area)
+  console.log(acc.area.length)
 }
 addArea();
-
-console.log((100 / acc.accuracy)
- + 1
-);
 
 module.exports = { addArea, gradiensToRadians, radiansToGradiens };
