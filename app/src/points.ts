@@ -1,20 +1,22 @@
-let { accuracy } = require("./app.js");
-const { area } = require("./area.js");
+const accur = require("./app.js");
 
 interface Point {
   x: number;
   y: number;
 }
-interface Result{
-  in: number,
-  out: number
+
+interface Result {
+  in: number;
+  out: number;
 }
 
 let results: Result = {
   in: 0,
-  out: 0
+  out: 0,
+};
+
+function generatePoints(): void {
+  // Implementation
 }
 
-function generatePoints():void{}
-
-module.exports = {results, generatePoints}
+module.exports = { results, generatePoints };

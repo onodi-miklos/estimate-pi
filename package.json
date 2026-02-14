@@ -5,12 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p app",
-    "node": "tsc -p app && node app/dist/app.js",
-    "start": "tsc -p app && nodemon app/dist/app.js",
-    "build:e": "tsc -p e",
-    "node:e": "tsc -p e && node e/dist/app.js",
-    "start:e": "tsc -p e && nodemon e/dist/app.js"
-  
+    "node": "npm run build && node app/dist/app.js",
+    "node:area":"npm run build && node app/dist/area.js",
+    "node:points":"npm run build && node app/dist/points.js"  
   },
   "keywords": [],
   "author": "",
