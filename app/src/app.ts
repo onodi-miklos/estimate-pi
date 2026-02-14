@@ -16,8 +16,9 @@ interface Result {
   out: number;
 }
 
-let areaSecurity: boolean = false;
-let area: Point[] = [];
+
+areaFile.addArea(accuracy)
+console.log(areaFile.area.length)
 
 // function calculatePi(args: Result): number {
 
@@ -27,4 +28,4 @@ let area: Point[] = [];
 
 // }
 
-module.exports = { accuracy, areaSecurity, area };
+module.exports = { accuracy };
