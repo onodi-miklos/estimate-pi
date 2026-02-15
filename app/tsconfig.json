@@ -3,7 +3,7 @@
     "noImplicitAny": true,
 
     
-    "rootDir": "./src",
+    "rootDir": "./source",
     "outDir": "./dist",
 
     "module": "CommonJS",
