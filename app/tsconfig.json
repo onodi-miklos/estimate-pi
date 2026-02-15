@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-
     
     "rootDir": "./source",
     "outDir": "./dist",
@@ -29,5 +28,5 @@
     "noEmitOnError": true,
     "removeComments": true
   },
-  "include": ["src/**/*"]
+  "include": ["source/**/*"]
 }

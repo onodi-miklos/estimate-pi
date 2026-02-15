@@ -15,12 +15,14 @@ let result : Result = {
     all: 0
 }
 
-function calculatePi(result: Result): number{
-  const pi: number= 4 * (result.in / result.all)
-  return pi
+function calculatePi(result: Result, accuracy: number): {accuracy: number, pi: number} {
+  const pi: number= result.all === 0 ? 0 : 4 * (result.in / result.all)
+  return {
+    accuracy: accuracy,
+    pi: pi
+  }
 }
 
-let points: Point[] = []
 
 function generatePoint(accuracy: number): void{
     const newAccuracy: number = Math.pow(accuracy, -1)
@@ -28,13 +30,12 @@ function generatePoint(accuracy: number): void{
     
   for (let i = 1; i <= accuracy; i+= newAccuracy) {
     const point: Point = {
-      x: Math.random().toFixed(accuracy)
-      y: Math.random().toFixed(accuracy)
+      x: Math.random(),
+      y: Math.random()
     }
-    points.push(point)
     
     if (
-        Math.pow(x, 2) + Math.pow(y, 2) <= 1
+        Math.pow(point.x, 2) + Math.pow(point.y, 2) <= 1
         ) {
             result.all++
             result.in++
@@ -52,19 +53,16 @@ function resetResults () : void {
     }
 }
 
-function saveResultsToFile(result: Result): void{
-    fs.writeFileSync(path.join(_dirname, '../results.txt', result\n, {flag: 'a'}))
+function saveResultsToFile(result: {accuracy: number, pi: number}): void{
+    fs.writeFileSync(path.join(__dirname, '../result.txt'), JSON.stringify(result) + "\n", {flag: 'a'})
 }
 
 function run(accuracy: number): void {
-    const newAccuracy = Math.pow(accuracy, -1)
-    for (let i = 1; i<=accuracy;
-    
-    // iteration steps
-    i++
-    
-    ) {
-    generatePoint(i)
-    saveResultsToFile(calculatePi(result))
-    resetResults()
-}}
+    // const newAccuracy = Math.pow(accuracy, -1)
+    for (let i = 1; i<=accuracy; i++) {
+        generatePoint(i)
+        saveResultsToFile(calculatePi(result, i))
+        resetResults()
+    }
+}
+run(1000)

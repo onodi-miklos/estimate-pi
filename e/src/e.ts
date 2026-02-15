@@ -6,10 +6,10 @@ interface Result{
     e: number
 }
 
-let results = Result[]
+let results: Result[] =[]
 
-function calculate(accuracy: number):number{
-    const newAccuracy = Math.pow(accuracy, -1)
+function calculate(accuracy: number):void{
+    // const newAccuracy = Math.pow(accuracy, -1)
     
     for (let i: number = 1; i <= accuracy; i++){
         const result: Result = {
@@ -20,5 +20,6 @@ function calculate(accuracy: number):number{
         results.push(result)
     }
 }
+calculate(100000)
 
-fs.writeFileSync(path.join(_dirname, ../result.txt), results)
+fs.writeFileSync(path.join(__dirname, "../result.txt"), JSON.stringify(results[results.length -1], null, 2))
