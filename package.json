@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p app",
-    "node": "npm run build && node app/dist/app.js",
-    "node:area":"npm run build && node app/dist/area.js",
-    "node:points":"npm run build && node app/dist/points.js"  
+    "node": "npm run build && node app/dist/app.js" 
   },
   "keywords": [],
   "author": "",
