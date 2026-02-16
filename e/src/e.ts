@@ -22,4 +22,4 @@ function calculate(accuracy: number):void{
 }
 calculate(100000)
 
-fs.writeFileSync(path.join(__dirname, "../result.txt"), JSON.stringify(results[results.length -1], null, 2))
+fs.writeFileSync(path.join(__dirname, "../result.txt"), JSON.stringify(results, null, 2))
