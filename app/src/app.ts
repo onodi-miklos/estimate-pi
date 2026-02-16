@@ -14,7 +14,7 @@ interface Point {
 
 interface Result {
   in: number;
-  out: number;
+  all: number;
 }
 
 
