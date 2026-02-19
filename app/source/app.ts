@@ -59,10 +59,10 @@ function saveResultsToFile(result: {accuracy: number, pi: number}): void{
 
 function run(accuracy: number): void {
     // const newAccuracy = Math.pow(accuracy, -1)
-    for (let i = 1; i<=accuracy; i++) {
+    for (let i = accuracy; i<=accuracy; i++) {
         generatePoint(i)
         saveResultsToFile(calculatePi(result, i))
         resetResults()
     }
 }
-run(1000)
+run(10000000)
