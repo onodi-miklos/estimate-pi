@@ -25,18 +25,17 @@ function calculatePi(result: Result, accuracy: number): {accuracy: number, pi: n
 
 
 function generatePoint(accuracy: number): void{
-    const newAccuracy: number = Math.pow(accuracy, -1)
+  // const newAccuracy: number = Math.pow(accuracy, -1)
     
     
-  for (let i = 1; i <= accuracy; i+= newAccuracy) {
+  for (let i = 1; i <= accuracy; i++) {
     const point: Point = {
       x: Math.random(),
       y: Math.random()
     }
     
-    if (
-        Math.pow(point.x, 2) + Math.pow(point.y, 2) <= 1
-        ) {
+    if (point.x * point.x + point.y * point.y <= 1)
+      {
             result.all++
             result.in++
         }
@@ -59,10 +58,12 @@ function saveResultsToFile(result: {accuracy: number, pi: number}): void{
 
 function run(accuracy: number): void {
     // const newAccuracy = Math.pow(accuracy, -1)
-    for (let i = accuracy; i<=accuracy; i++) {
+    for (let i = 1; i<=accuracy; i++) {
         generatePoint(i)
         saveResultsToFile(calculatePi(result, i))
         resetResults()
     }
 }
-run(10000000)
+
+run(1000000)
+// run(1000000000)
